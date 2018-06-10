@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.pratamawijaya.cobanavigationlib.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_mainFragment_to_viewTransactionFragment"
+            app:destination="@id/viewTransactionFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_chooseRecepientFragment"
+            app:destination="@id/chooseRecepientFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_viewBalanceFragment"
+            app:destination="@id/viewBalanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewTransactionFragment"
+        android:name="com.pratamawijaya.cobanavigationlib.ui.ViewTransactionFragment"
+        android:label="view_transaction_fragment"
+        tools:layout="@layout/view_transaction_fragment" />
+    <fragment
+        android:id="@+id/chooseRecepientFragment"
+        android:name="com.pratamawijaya.cobanavigationlib.ui.ChooseRecepientFragment"
+        android:label="choose_recepient_fragment"
+        tools:layout="@layout/choose_recepient_fragment">
+        <action
+            android:id="@+id/action_chooseRecepientFragment_to_specifyAmountFragment"
+            app:destination="@id/specifyAmountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewBalanceFragment"
+        android:name="com.pratamawijaya.cobanavigationlib.ui.ViewBalanceFragment"
+        android:label="view_balance_fragment"
+        tools:layout="@layout/view_balance_fragment" />
+    <fragment
+        android:id="@+id/specifyAmountFragment"
+        android:name="com.pratamawijaya.cobanavigationlib.ui.SpecifyAmountFragment"
+        android:label="specify_amount_fragment"
+        tools:layout="@layout/specify_amount_fragment">
+        <action
+            android:id="@+id/action_specifyAmountFragment_to_confirmationFragment"
+            app:destination="@id/confirmationFragment" />
+        <argument
+            android:name="recipient"
+            app:type="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="com.pratamawijaya.cobanavigationlib.ui.ConfirmationFragment"
+        android:label="confirmation_fragment"
+        tools:layout="@layout/confirmation_fragment" />
+</navigation>
